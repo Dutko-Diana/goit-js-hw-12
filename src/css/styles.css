@@ -13,6 +13,8 @@
 .form {
   display: flex;
   gap: 8px;
+  position: sticky;
+  top: 32px;
 }
 
 .input {

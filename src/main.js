@@ -50,6 +50,19 @@ async function submitForm(event) {
 
       initSimpleLightbox();
 
+      const total = data.totalHits;
+      const totalPages = Math.ceil(total / 15);
+
+      if (page >= totalPages) {
+        iziToast.info({
+          position: 'topRight',
+          message:
+            "We're sorry, but there are no more images for your request.",
+        });
+        loadMoreBtn.style.display = 'none';
+        return;
+      }
+
       page++;
       loadMoreBtn.style.display = 'block';
     })
